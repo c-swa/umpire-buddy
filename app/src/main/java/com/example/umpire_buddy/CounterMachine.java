@@ -9,11 +9,26 @@ public class CounterMachine {
     private int ballCount;
     private int strikeCount;
 
-    public int getBallCount(){
-        return 0;
+    //Constructor
+    CounterMachine(){
+        resetCounts();
     }
+
+    //Increments ballCount
+
+    //Returns ballCount.
+    public int getBallCount(){
+        return ballCount;
+    }
+    //Returns strikeCount.
     public int getStrikeCount(){
-        return 0;
+        return strikeCount;
+    }
+
+    //When told to Reset values to default, resetCounts() sets both ballCount and strikeCount to 0.
+    public void resetCounts(){
+        ballCount = 0;
+        strikeCount = 0;
     }
 
 }
