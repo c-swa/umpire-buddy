@@ -31,4 +31,16 @@ public class CounterMachine {
         strikeCount = 0;
     }
 
+    //
+    public int incrementValue(boolean isBall){
+        if(isBall){
+            ballCount++;
+            return ballCount;
+        } else {
+            strikeCount++;
+            return strikeCount;
+        }
+
+    }
+
 }
