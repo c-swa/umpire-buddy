@@ -67,13 +67,13 @@ public class CounterMachine {
 
     //When the ball count reaches its' limit, this dialog box should open.
     public void openWalkDialog(){
-        DisplayDialog displayDialog =  new DisplayDialog("test ball title", "test ball message");
+        DisplayDialog displayDialog =  new DisplayDialog("WALK!", "Player walks, too many balls.");
         displayDialog.show(mainActivity.getSupportFragmentManager(), "walk dialog");
     }
 
     //When the strike count reaches its' limit, this dialog box should open.
     private void openOutDialog(){
-        DisplayDialog displayDialog = new DisplayDialog("test strike title", "test strike message");
+        DisplayDialog displayDialog = new DisplayDialog("OUT!", "Player strikes out!");
         displayDialog.show(mainActivity.getSupportFragmentManager(), "out dialog");
     }
 }
