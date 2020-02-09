@@ -14,11 +14,6 @@ public class CounterMachine {
     private int ballCount;
     private int strikeCount;
 
-    //Default Constructor
-    CounterMachine(){
-        resetCounts();
-    }
-
     CounterMachine(MainActivity main){
         mainActivity = main;
     }
