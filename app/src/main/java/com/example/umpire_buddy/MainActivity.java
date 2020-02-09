@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
     private CounterMachine counterMachine;
 
     //Button Instantiations
-    private Button addBall;
-    private Button addStrike;
-    private Button resetCounts;
-    private Button exitApp;
-    private Button about;
+    public Button addBall;
+    public Button addStrike;
+    public Button resetCounts;
+    public Button exitApp;
+   // public Button about;
 
 
     @Override
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        counterMachine = new CounterMachine();
+        counterMachine = new CounterMachine(this);
 
         ((TextView) findViewById(R.id.ballDisplay)).setText(Integer.toString(counterMachine.getBallCount()));
         ((TextView) findViewById(R.id.strikeDisplay)).setText(Integer.toString(counterMachine.getStrikeCount()));
@@ -68,18 +68,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Sets passed button as inactive
+    public void setInactive(Button button){
+        button.setEnabled(false);
+    }
+
+    //Sets passed button as active
+    public void setActive(Button button){
+        button.setEnabled(true);
+    }
+
     //Method for onClick event of aboutPageButton
 
 
     //Method for onClick event of addBall button
     public void addBall(View view){
-        counterMachine.incrementValue(true);
+        counterMachine.incrementValue(addBall);
         ((TextView) findViewById(R.id.ballDisplay)).setText(Integer.toString(counterMachine.getBallCount()));
     }
 
     //Method for onClick event of addStrike button
     public void addStrike(View view){
-        counterMachine.incrementValue(false);
+        counterMachine.incrementValue(addStrike);
         ((TextView) findViewById(R.id.strikeDisplay)).setText(Integer.toString(counterMachine.getStrikeCount()));
     }
 

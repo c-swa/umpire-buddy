@@ -10,12 +10,15 @@ package com.example.umpire_buddy;
 
 public class DisplayDialog extends AppCompatDialogFragment {
 
+    private String title;
+    private String message;
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Example Title")
-                .setMessage("This is a dialog")
-                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+        builder.setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
 
@@ -23,5 +26,11 @@ public class DisplayDialog extends AppCompatDialogFragment {
                 });
         return builder.create();
     }
+
+    public DisplayDialog(String passed_title, String passed_message){
+        title = passed_title;
+        message = passed_message;
+    }
 }
+
 
