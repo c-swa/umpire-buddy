@@ -1,5 +1,7 @@
 <resources>
+
     <string name="app_name">umpire-buddy</string>
+    <!-- button resource names -->
     <string name="x">X</string>
     <string name="ball">BALL</string>
     <string name="addBall">+ BALL</string>
@@ -8,4 +10,12 @@
     <string name="reset">RESET</string>
     <string name="exit">Exit</string>
     <string name="about">About</string>
+
+    <!-- About page text -->
+    <string name="author">Christopher Aram Swayne</string>
+    <string name="title">Umpire Buddy</string>
+    <string name="version">Version 2.0</string>
+    <string name="back">Back</string>
+    <string name="date">8 February 2020</string>
+
 </resources>

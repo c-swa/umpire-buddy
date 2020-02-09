@@ -2,12 +2,15 @@ package com.example.umpire_buddy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public Button addStrike;
     public Button resetCounts;
     public Button exitApp;
-   // public Button about;
+    public Button about;
 
 
     @Override
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         addStrike = (Button) findViewById(R.id.addStrike);
         resetCounts = (Button) findViewById(R.id.resetCounters);
         exitApp = (Button) findViewById(R.id.exitApp);
+        about = (Button) findViewById(R.id.aboutButton);
 
         //Sets addBall click listener
         addBall.setOnClickListener(new View.OnClickListener(){
@@ -59,13 +63,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //Sets exitApp onClick listener
-        exitApp.setOnClickListener(new View.OnClickListener() {
+        exitApp.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 exitApp(v);
             }
         });
+        //Sets aboutButton onClick listener
+        about.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                showAboutScreen();
+            }
+        });
 
+    }
+
+    //Allows change of screen when user taps about button.
+    public void showAboutScreen(){
+        Intent intent = new Intent(this, aboutScreen.class);
+
+        TextView app_name = (TextView) findViewById(R.id.app_name);
+        TextView app_display_name = (TextView) findViewById(R.id.app_name_disp);
+        TextView author = (TextView) findViewById(R.id.author);
+        TextView author_name = (TextView) findViewById(R.id.author_name);
+        TextView version = (TextView) findViewById(R.id.version);
+        TextView date = (TextView) findViewById(R.id.published);
+
+        startActivity(intent);
     }
 
     //Sets passed button as inactive
