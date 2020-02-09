@@ -6,4 +6,6 @@
     <string name="addStrike">+ STRIKE</string>
     <string name="strike">STRIKE</string>
     <string name="reset">RESET</string>
+    <string name="exit">Exit</string>
+    <string name="about">About</string>
 </resources>
